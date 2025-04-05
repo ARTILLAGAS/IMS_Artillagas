@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://i.ibb.co/tw0NQMZt/clipart3475012.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+ 
+<div class="header">
+    <a href="https://ibb.co/tw0NQMZt">
+        <img src="https://i.ibb.co/tw0NQMZt/clipart3475012.png" alt="clipart3475012" class="logo">
+    </a>
+    <h1>Inventorium</h1>
+</div>
+ 
+<div class="filter">
+    <input type="text" id="search" placeholder="Search by name" oninput="filterTable()">
+    <button class="add-product-button" onclick="toggleAddProduct()">Add Product</button>
+    <div class="filter-options">
+        <select id="quantityFilterType" onchange="filterByQuantity();">
+            <option value="">Filter by Quantity</option>
+            <option value="least">Least to Most</option>
+            <option value="most">Most to Least</option>
+        </select>
+        <select id="sortOrder" onchange="sortTable()">
+            <option value="">Sort by Date Added</option>
+            <option value="asc">Oldest to Newest</option>
+            <option value="desc">Newest to Oldest</option>
+        </select>
+    </div>
+</div>
+ 
+<div class="modal" id="productModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3 id="modalTitle">Add Product</h3>
+        <input type="text" id="productName" placeholder="Product Name">
+        <input type="number" id="quantity" placeholder="Quantity" min="1">
+        <input type="number" id="price" placeholder="Price" min="0" step="0.01">
+        <input type="datetime-local" id="dateAdded">
+        <textarea id="productDetails" placeholder="Details about the product (optional)" rows="4"></textarea>
+ 
+        <div class="modal-buttons">
+            <button onclick="submitProduct()">Submit</button>
+            <button class="cancel-button" onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+</div>
+ 
+<div id="productDetailsUnderTable" class="product-details"></div>
+ 
+<table id="inventoryTable">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Price (₱)</th>
+            <th>Date Added</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Sample Product 1</th>
+            <th>1000</th>
+            <th>27,000</th>
+            <th>April 1, 2025</th>
+            <th><button>Edit</button><button>Delete</button></th>
+        </tr>
+    </tbody>
+</table>
+ 
+<div class="credits">
+ 
+    <p>© 2025 Jayzee Lance Artillagas & Angelene M. Arcega. All Rights Reserved.</p>
+    
+</div>
+ 
+<!-- TESTING LANG JAVASCRIPT SIR -->
+<script src="function.js"></script>
+ 
+</body>
+</html>

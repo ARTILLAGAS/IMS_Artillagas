@@ -1,0 +1,283 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #808080;
+  padding: 15px;
+  border-radius: 8px;
+  color: white;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 8px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 50px;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  flex-wrap: nowrap;
+  font-family: 'Poppins', sans-serif;
+}
+
+.filter input,
+.filter-options select {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: 'Poppins', sans-serif;
+}
+
+.filter input {
+  width: 400px;
+  margin-right: 10px;
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.add-product-button {
+  padding: 10px 15px;
+  background-color: #606060;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 14px;
+  width: 150px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.add-product-button:hover {
+  background-color: #404040;
+  transform: scale(1.05);
+}
+
+.filter-options {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.filter-options select {
+  margin-right: 10px;
+  padding: 10px;
+  font-size: 14px;
+  width: 150px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+input, select, textarea {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: calc(100% - 18px);
+  font-size: 14px;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #A8BFEA;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #808080;
+  color: white;
+}
+
+tbody tr:hover {
+  background-color: #e0e0e0;
+}
+
+.edit-button,
+.delete-button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 100%;
+  height: 38px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.edit-button {
+  background-color: #606060;
+  color: white;
+}
+
+.delete-button {
+  background-color: #DC3545;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #404040;
+  transform: scale(1.05);
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .filter {
+      flex-direction: column;
+  }
+
+  .add-product-button, .edit-button, .delete-button {
+      width: 100%;
+      margin-top: 5px;
+  }
+
+  input, button, select {
+      width: 100%;
+  }
+}
+
+.credits {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.add-product-details button,
+.edit-product-details button,
+.cancel-button,
+.modal-content button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 150px;
+  height: 38px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.add-product-details button,
+.edit-product-details button,
+.modal-content button:not(.cancel-button) {
+  background-color: #606060;
+  color: white;
+}
+
+.cancel-button {
+  background-color: #DC3545 !important;
+  color: white;
+}
+
+.add-product-details button:hover,
+.edit-product-details button:hover,
+.modal-content button:not(.cancel-button):hover {
+  background-color: #404040;
+  transform: scale(1.05);
+}
+
+.cancel-button:hover {
+  background-color: #c82333 !important;
+  transform: scale(1.05);
+}
+
+.product-details-row td {
+  background-color: #eef3fc;
+}
+
+.product-details {
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.edit-button,
+.delete-button {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.credits {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+/*
+  PAG MAY GANITO SIR KINOPYA CODE NAMIN!!!
+  ~ ARTILLAGAS & ARCEGA
+*/
