@@ -179,7 +179,7 @@ tbody tr:hover {
 }
 
 .delete-button {
-  background-color: #DC3545;
+  background-color: #DC3545 !important;
   color: white;
 }
 
@@ -189,7 +189,7 @@ tbody tr:hover {
 }
 
 .delete-button:hover {
-  background-color: #c82333;
+  background-color: #c82333 !important;
   transform: scale(1.05);
 }
 
@@ -275,6 +275,15 @@ tbody tr:hover {
   margin-top: 20px;
   font-size: 14px;
   color: #666;
+}
+
+#inventoryTable img,
+#imagePreview {
+    border-radius: 5px;
+}
+
+.product-details img {
+    border-radius: 5px;
 }
 
 /*
